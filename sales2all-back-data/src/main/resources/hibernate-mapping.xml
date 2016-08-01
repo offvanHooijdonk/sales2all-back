@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="by.share.sales.server.data.domain">
+	<class name="CategoryBean" table="CATEGORY">
+		<id name="id" type="integer" column="ID" ><generator class="identity"/></id>
+
+		<property name="nameCode" type="string" column="NAME_CODE" />
+		<property name="nameLocal" type="string" column="NAME_LOCAL" />
+
+		<many-to-one name="parent" column="PARENT_ID" class="CategoryBean"
+			not-null="false" unique="false" lazy="false" />
+	</class>
+
+	<class name="CurrencyBean" table="CURRENCY">
+		<id name="id" type="integer" column="ID" ><generator class="identity"/></id>
+
+		<property name="symbol" type="char" column="SYMBOL" />
+		<property name="code" type="string" column="code" not-null="true" />
+	</class>
+
+	<class name="LocationBean" table="LOCATION">
+		<id name="id" type="integer" column="ID" ><generator class="identity"/></id>
+
+		<property name="localName" type="string" column="LOCAL_NAME" />
+		<property name="codeName" type="string" column="CODE_NAME" unique="true"/>
+		<many-to-one name="parent" column="PARENT_ID" class="LocationBean"
+			not-null="false" unique="false" lazy="false" cascade="persist" />
+		<property name="type" type="integer" column="TYPE" />
+	</class>
+
+	<class name="TagBean" table="TAG">
+		<id name="id" type="integer" column="ID" ><generator class="identity"/></id>
+
+		<property name="title" type="string" column="TITLE_TEXT" />
+		<property name="titleCode" type="string" column="TITLE_CODE" />
+		<property name="textColor" type="string" column="TEXT_COLOR" />
+		<property name="backgroundColor" type="string" column="BACKGROUND_COLOR" />
+	</class>
+
+	<class name="SaleBean" table="SALE">
+	    <id name="id" type="integer" column="ID" ><generator class="identity"/></id>
+	    
+	    <property name="name" type="string" column="NAME" />
+	    <property name="description" type="string" column="DESCRIPTION" />
+	    <property name="startDate" type="date" column="START_DATE" />
+	    <property name="endDate" type="date" column="END_DATE" />
+	    <property name="priceOrigin" type="double" column="PRICE_ORIGIN" />
+	    <property name="priceCurrent" type="double" column="PRICE_CURRENT" />
+	    <property name="perCent" type="integer" column="PER_CENT" />
+	    <property name="amount" type="integer" column="AMOUNT" />
+	    <many-to-one name="category" column="CATEGORY_ID" class="CategoryBean"
+			not-null="false" unique="false" lazy="false" />
+	    <many-to-one name="currency" column="CURRENCY_ID" class="CurrencyBean"
+			not-null="false" unique="false" lazy="false" />
+	    <many-to-one name="city" column="CITY_ID" class="LocationBean"
+			not-null="false" unique="false" lazy="false" cascade="persist,merge" />
+	    <property name="latitude" type="double" column="LATITUDE" />
+	    <property name="longitude" type="double" column="LONGITUDE" />
+	    <property name="address" type="string" column="ADDRESS" />
+	    <property name="tagsString" type="string" column="TAGS_STRING" />
+	    <property name="status" type="integer" column="STATUS" />
+	    <property name="createdDate" type="date" column="CREATED_DATE" />
+	</class>
+
+</hibernate-mapping>
