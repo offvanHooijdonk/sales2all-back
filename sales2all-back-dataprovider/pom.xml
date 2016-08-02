@@ -9,10 +9,10 @@
 	</parent>
 
 	<groupId>com.sales2all.back.data</groupId>
-	<artifactId>sales2all-back-data</artifactId>
+	<artifactId>sales2all-back-dataprovider</artifactId>
 	<packaging>jar</packaging>
 
-	<name>sales2all-back-data</name>
+	<name>sales2all-back-dataprovider</name>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

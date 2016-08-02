@@ -27,8 +27,9 @@
     </dependencies>
 
     <modules>
-        <module>sales2all-back-data</module>
+        <module>sales2all-back-dataprovider</module>
         <module>sales2all-back-rest</module>
+		<module>sales2all-back-service</module>
     </modules>
 
     <build>

@@ -16,8 +16,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.sales2all.back.data</groupId>
-			<artifactId>sales2all-back-data</artifactId>
+			<groupId>com.sales2all.back.service</groupId>
+			<artifactId>sales2all-back-service</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
