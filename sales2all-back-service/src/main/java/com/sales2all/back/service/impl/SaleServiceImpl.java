@@ -29,7 +29,7 @@ public class SaleServiceImpl implements ISaleService {
 
     @Override
     @Transactional
-    public SaleBean getById(String id) {
+    public SaleBean getById(long id) {
         return dao.getById(SaleBean.class, id);
     }
 

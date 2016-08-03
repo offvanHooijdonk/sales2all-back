@@ -41,14 +41,18 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
         </property>
-        <property name="annotatedClasses">
+        <!-- use SCAN! -->
+        <property name="packagesToScan">
+            <value>com.sales2all.back.data.domain</value>
+        </property>
+        <!--<property name="annotatedClasses">
             <list>
                 <value>com.sales2all.back.data.domain.SaleBean</value>
             </list>
-        </property>
+        </property>-->
         <!--<property name="mappingResources">
             <list>
                 <value>hibernate-mapping.xml</value>

@@ -10,18 +10,18 @@ public class BaseBean {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private String id;
+    private long id;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     @Override
     public boolean equals( Object obj) {
-        return obj != null && obj instanceof BaseBean && this.getId().equals(((BaseBean) obj).getId());
+        return obj != null && obj instanceof BaseBean && this.getId() ==((BaseBean) obj).getId();
     }
 }

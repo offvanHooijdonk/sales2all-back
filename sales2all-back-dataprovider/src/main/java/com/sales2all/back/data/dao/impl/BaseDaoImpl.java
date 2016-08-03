@@ -30,7 +30,7 @@ public class BaseDaoImpl<T extends BaseBean> implements IBaseDao<T> {
     }
 
     @Override
-    public T getById(Class<T> cls, String id) {
+    public T getById(Class<T> cls, long id) {
         return (T) getSession().get(cls, id);
     }
 

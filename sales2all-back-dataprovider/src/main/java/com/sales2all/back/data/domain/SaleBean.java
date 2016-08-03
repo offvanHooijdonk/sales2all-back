@@ -9,10 +9,12 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "SALES")
+@Table(name = "SALE")
 public class SaleBean extends BaseBean {
     @Column(name = "NAME", nullable = false)
     private String name;
+    @Column(name = "DISCOUNT", nullable = false)
+    private int discount;
 
     public String getName() {
         return name;
@@ -20,5 +22,13 @@ public class SaleBean extends BaseBean {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
     }
 }
