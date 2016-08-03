@@ -10,7 +10,7 @@ import java.util.List;
 public interface IBaseService<T extends BaseBean> {
     List<T> listAll();
 
-    T getById(long id);
+    T getById(Long id);
 
     void save(T bean);
     void save(List<T> list);

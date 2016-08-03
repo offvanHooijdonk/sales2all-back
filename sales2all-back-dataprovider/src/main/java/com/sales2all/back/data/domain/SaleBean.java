@@ -1,8 +1,7 @@
 package com.sales2all.back.data.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Yahor_Fralou on 8/1/2016.
@@ -15,6 +14,9 @@ public class SaleBean extends BaseBean {
     private String name;
     @Column(name = "DISCOUNT", nullable = false)
     private int discount;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "sale_id")
+    private List<SaleImageBean> images;
 
     public String getName() {
         return name;
@@ -30,5 +32,13 @@ public class SaleBean extends BaseBean {
 
     public void setDiscount(int discount) {
         this.discount = discount;
+    }
+
+    public List<SaleImageBean> getImages() {
+        return images;
+    }
+
+    public void setImages(List<SaleImageBean> images) {
+        this.images = images;
     }
 }

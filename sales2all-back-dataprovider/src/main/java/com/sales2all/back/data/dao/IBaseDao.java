@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IBaseDao<T extends BaseBean> {
     List<T> listAll(Class<T> cls);
-    T getById(Class<T> cls, long id);
+    T getById(Class<T> cls, Long id);
 
     void save(T bean);
     void save(List<T> list);
