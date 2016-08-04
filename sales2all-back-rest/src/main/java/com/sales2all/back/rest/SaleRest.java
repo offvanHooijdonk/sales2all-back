@@ -1,7 +1,7 @@
 package com.sales2all.back.rest;
 
 import com.sales2all.back.data.domain.SaleBean;
-import com.sales2all.back.service.ISaleService;
+import com.sales2all.back.data.service.ISaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

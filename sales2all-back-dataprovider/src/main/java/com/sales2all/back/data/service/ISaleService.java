@@ -1,4 +1,4 @@
-package com.sales2all.back.service;
+package com.sales2all.back.data.service;
 
 import com.sales2all.back.data.domain.SaleBean;
 

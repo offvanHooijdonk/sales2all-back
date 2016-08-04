@@ -1,8 +1,8 @@
-package com.sales2all.back.service.impl;
+package com.sales2all.back.data.service.impl;
 
 import com.sales2all.back.data.dao.IBaseDao;
 import com.sales2all.back.data.domain.SaleBean;
-import com.sales2all.back.service.ISaleService;
+import com.sales2all.back.data.service.ISaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
