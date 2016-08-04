@@ -5,9 +5,11 @@ import com.sales2all.back.data.domain.SaleBean;
 import com.sales2all.back.data.service.ISaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -56,4 +58,5 @@ public class SaleServiceImpl implements ISaleService {
     public void delete(List<SaleBean> list) {
         dao.delete(list);
     }
+
 }

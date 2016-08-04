@@ -1,8 +1,9 @@
 package com.sales2all.back.data.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by off on 03.08.2016.
@@ -15,6 +16,10 @@ public class SaleImageBean extends BaseBean {
     private String fileName;
     @Column(name = "main")
     private boolean main = false;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "sale_id", nullable = false)
+    private SaleBean sale;
 
     public String getFileName() {
         return fileName;
@@ -30,5 +35,13 @@ public class SaleImageBean extends BaseBean {
 
     public void setMain(boolean main) {
         this.main = main;
+    }
+
+    public SaleBean getSale() {
+        return sale;
+    }
+
+    public void setSale(SaleBean sale) {
+        this.sale = sale;
     }
 }

@@ -14,8 +14,7 @@ public class SaleBean extends BaseBean {
     private String name;
     @Column(name = "DISCOUNT", nullable = false)
     private int discount;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "sale_id")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sale")
     private List<SaleImageBean> images;
 
     public String getName() {
